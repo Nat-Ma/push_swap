@@ -19,23 +19,27 @@ INCLUDES = -I includes/.
 NAME = push_swap
 LIBFT = libft/libft.a
 
-SRC = main.c init_stack.c free_mem.c error.c check_input.c
+SRC = main.c init_stack.c free_mem.c error.c check_input.c ft_atol.c
+
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -Llibft -lft -o $@
+libft/libft.a:
+	make -C libft
+
+$(NAME): $(OBJ) libft/libft.a
+	$(CC) $(CFLAGS) $(OBJ) -g -Llibft -lft -o $@
 
 %.o: %.c
-	$(CC) $(CFLAGS) $(INCLUDES) -Ilibft/includes -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -g -Ilibft/includes -c $< -o $@
 
 clean:
 	make clean -C libft
 	$(RM) $(OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) libft/libft.a
 
 re: fclean all
 

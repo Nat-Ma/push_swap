@@ -37,8 +37,9 @@ void	free_stack(t_stack *stack)
 	{
 		ft_printf("free stack %d\n", stack->nbr);
 		tmp = stack->next;
+		ft_printf("free stack %p\n", stack);
 		free(stack);
 		stack = tmp;
 	}
-	free(tmp);
+	//free(tmp);
 }

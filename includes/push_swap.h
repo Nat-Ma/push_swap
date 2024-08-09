@@ -25,7 +25,8 @@ typedef struct s_stack {
 t_stack	*init_stack(t_stack *node, char **nums);
 void	free_nums(char **nums);
 void	free_stack(t_stack *stack);
-int		invalid_input(char *num);
+int		valid_input(char *num);
 void	ft_print_error(char *err_msg);
+long	ft_atol(const char *num);
 
 #endif

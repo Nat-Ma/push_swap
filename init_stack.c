@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 20:03:43 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/09 09:42:05 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/09 12:58:17 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_stack	*init_stack(t_stack *head, char **nums)
 {
 	t_stack	*new;
-	int		size;
+	size_t	size;
 
 	size = 0;
 	head = NULL;
@@ -24,12 +24,18 @@ t_stack	*init_stack(t_stack *head, char **nums)
 	//head->len = size;
 	while (size)
 	{
-		new = malloc(sizeof(t_stack));
-		if (!new || invalid_input(nums[--size]))
+		if (!valid_input(nums[--size]))
 		{
 			free_stack(head);
 			return (0);
 		}
+		new = malloc(sizeof(t_stack));
+		if (!new)
+		{
+			free_stack(head);
+			return (0);
+		}
+		ft_printf("alloced new %p\n", new);
 		new->nbr = ft_atoi(nums[size]);
 		ft_printf("created head with num %d\n", new->nbr);
 		new->next = head;
@@ -37,3 +43,4 @@ t_stack	*init_stack(t_stack *head, char **nums)
 	}
 	return (head);
 }
+
