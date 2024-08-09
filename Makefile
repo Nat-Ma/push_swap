@@ -19,7 +19,7 @@ INCLUDES = -I includes/.
 NAME = push_swap
 LIBFT = libft/libft.a
 
-SRC = main.c init_stack.c free_mem.c error.c check_input.c ft_atol.c
+SRC = main.c init_stack.c free_mem.c error.c check_input.c ft_atol.c swap.c
 
 OBJ = $(SRC:.c=.o)
 

@@ -16,6 +16,7 @@ int	main(int argc, char **argv)
 {
 	char	**nums;
 	t_stack	*a;
+	t_stack *curr;
 
 	a = NULL;
 	nums = NULL;
@@ -29,6 +30,19 @@ int	main(int argc, char **argv)
 	}
 	if (argc > 2)
 		a = init_stack(a, argv + 1);
+	curr = a;
+	while (curr)
+	{
+		ft_printf("node: %d\n", curr->nbr);
+		curr = curr->next;
+	}
+	sa(&a);
+	curr = a;
+	while (curr)
+	{
+		ft_printf("node: %d\n", curr->nbr);
+		curr = curr->next;
+	}
 	free_stack(a);
 	nums = NULL;
 	a = NULL;
