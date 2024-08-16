@@ -6,9 +6,11 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 19:22:13 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/16 08:36:42 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/16 08:56:52 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "includes/push_swap.h"
 
 #include "includes/push_swap.h"
 

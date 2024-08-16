@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 19:23:21 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/16 08:38:51 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/16 08:57:48 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 typedef struct s_stack {
 	int				nbr;
+	size_t			len;
 	struct s_stack	*next;
 }					t_stack;
 
