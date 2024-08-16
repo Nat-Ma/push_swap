@@ -6,26 +6,11 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 13:46:18 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/16 14:54:47 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/16 18:28:16 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
-
-size_t	stack_size(t_stack *head)
-{
-	size_t	size;
-	t_stack	*curr;
-
-	size = 0;
-	curr = head;
-	while (curr)
-	{
-		size++;
-		curr = curr->next;
-	}
-	return (size);
-}
 
 void	push_to_front(t_stack **head, t_stack *node)
 {

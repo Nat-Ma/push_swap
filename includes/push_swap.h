@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 19:23:21 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/16 14:30:06 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/16 18:33:15 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,16 @@ void	ft_print_error(char *err_msg);
 long	ft_atol(const char *num);
 void	sa(t_stack **head);
 void	sb(t_stack **head);
+void	ss(t_stack **head_a, t_stack **head_b);
 void	ra(t_stack **head);
 void	rb(t_stack **head);
+void	rr(t_stack **head_a, t_stack **head_b);
 void	rra(t_stack **head);
 void	rrb(t_stack **head);
+void	rrr(t_stack **head_a, t_stack **head_b);
 void	pa(t_stack **head_a, t_stack **head_b);
 void	pb(t_stack **head_a, t_stack **head_b);
+void	tiny_sort(t_stack **head_a);
+void	print_stack(t_stack *head);
 
 #endif

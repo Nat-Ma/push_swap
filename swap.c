@@ -6,20 +6,20 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 08:44:21 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/16 12:00:48 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/16 16:27:03 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-void	swap_values(t_stack *a, t_stack *b)
-{
-	int	tmp;
+// void	swap_values(t_stack *a, t_stack *b)
+// {
+// 	int	tmp;
 
-	tmp = a->nbr;
-	a->nbr = b->nbr;
-	b->nbr = tmp;
-}
+// 	tmp = a->nbr;
+// 	a->nbr = b->nbr;
+// 	b->nbr = tmp;
+// }
 
 void    swap_nodes(t_stack **head, t_stack *first, t_stack *second)
 {
@@ -68,4 +68,10 @@ void	sb(t_stack **head)
 		swap_nodes(head, *head, (*head)->next);
 		ft_printf("sb\n");
 	}
+}
+
+void	ss(t_stack **head_a, t_stack **head_b)
+{
+	sa(head_a);
+	sb(head_b);
 }
