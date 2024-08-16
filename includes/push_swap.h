@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 19:23:21 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/16 12:21:08 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/16 13:37:46 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,7 @@ void	sa(t_stack **head);
 void	sb(t_stack **head);
 void	ra(t_stack **head);
 void	rb(t_stack **head);
+void	rra(t_stack **head);
+void	rrb(t_stack **head);
 
 #endif

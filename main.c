@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 19:22:13 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/16 12:22:56 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/16 13:38:03 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int	main(int argc, char **argv)
 	sa(&a);
 	print_stack(a);
 	ra(&a);
+	print_stack(a);
+	rra(&a);
 	print_stack(a);
 	free_stack(a);
 	nums = NULL;
