@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 09:00:44 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/16 10:43:30 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/16 13:03:42 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,21 @@ int	in_int_range(char **nums, int size)
 
 int	only_digits(char **nums, int size)
 {
-	if (**nums == '-' || **nums == '+')
-		nums++;
+	int	i;
+
 	while(size--)
 	{
-		if (!ft_isdigit(*nums[size]))
+		i = 0;
+		if (nums[size][i] == '-' || nums[size][i] == '+')
+			i++;
+		while (nums[size][i])
 		{
-			ft_print_error("All Inputs must be digits.");
-			return (0);
+			if (!ft_isdigit(nums[size][i]))
+			{
+				ft_print_error("All Inputs must be digits.");
+				return (0);
+			}
+			i++;
 		}
 	}
 	return (1);

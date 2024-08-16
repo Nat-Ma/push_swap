@@ -6,7 +6,7 @@
 #    By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/08 19:05:59 by natalierauh       #+#    #+#              #
-#    Updated: 2024/08/16 10:41:25 by natalierauh      ###   ########.fr        #
+#    Updated: 2024/08/16 12:21:30 by natalierauh      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ INCLUDES = -I includes/.
 NAME = push_swap
 LIBFT = libft/libft.a
 
-SRC = main.c init_stack.c free_mem.c error.c validate_input.c ft_atol.c swap.c
+SRC = main.c init_stack.c free_mem.c error.c validate_input.c ft_atol.c \
+	swap.c rotate.c \
 
 OBJ = $(SRC:.c=.o)
 

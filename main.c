@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 19:22:13 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/16 10:49:21 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/16 12:22:56 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,15 @@ int	main(int argc, char **argv)
 			return (1);
 		a = init_stack(a, nums);
 		free_nums(nums);
-		exit (0);
+		if (!a)
+			exit (0);
 	}
 	if (argc > 2)
 		a = init_stack(a, argv + 1);
 	print_stack(a);
 	sa(&a);
+	print_stack(a);
+	ra(&a);
 	print_stack(a);
 	free_stack(a);
 	nums = NULL;
