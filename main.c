@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 19:22:13 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/16 10:40:11 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/16 10:49:21 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int	main(int argc, char **argv)
 		if (!nums)
 			return (1);
 		a = init_stack(a, nums);
-		ft_printf("Free nums cause theyre now in stack\n");
 		free_nums(nums);
+		exit (0);
 	}
 	if (argc > 2)
 		a = init_stack(a, argv + 1);

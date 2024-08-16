@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 20:03:43 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/16 10:39:51 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/16 10:48:25 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,7 @@ t_stack	*init_stack(t_stack *head, char **nums)
 	while (nums[size])
 		size++;
 	if (!valid_input(nums, size))
-	{
-		free_nums(nums);
-		exit (0);
-	}
+		return (0);
 	ft_printf("---------- INPUT VALID ----------\n");
 	while (size--)
 	{
