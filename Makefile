@@ -6,7 +6,7 @@
 #    By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/08 19:05:59 by natalierauh       #+#    #+#              #
-#    Updated: 2024/08/16 07:51:25 by natalierauh      ###   ########.fr        #
+#    Updated: 2024/08/16 09:16:48 by natalierauh      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,23 +19,27 @@ INCLUDES = -I includes/.
 NAME = push_swap
 LIBFT = libft/libft.a
 
-SRC = main.c init_stack.c free_mem.c error.c validate_input.c ft_atol.c
+SRC = main.c init_stack.c free_mem.c error.c check_input.c ft_atol.c swap.c
+
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) -g $(CFLAGS) $(OBJ) -Llibft -lft -o $@
+libft/libft.a:
+	make -C libft
+
+$(NAME): $(OBJ) libft/libft.a
+	$(CC) $(CFLAGS) $(OBJ) -g -Llibft -lft -o $@
 
 %.o: %.c
-	$(CC) -g $(CFLAGS) $(INCLUDES) -Ilibft/includes -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -g -Ilibft/includes -c $< -o $@
 
 clean:
 	make clean -C libft
 	$(RM) $(OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) libft/libft.a
 
 re: fclean all
 
