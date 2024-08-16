@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 09:08:29 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/09 09:31:58 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/09 15:00:46 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_print_error(char *err_msg)
 {
-	ft_printf("%s\n", err_msg);
+	ft_printf("Error\n%s\n", err_msg);
 }

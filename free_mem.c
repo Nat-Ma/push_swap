@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 21:41:18 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/09 09:42:20 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/09 11:55:28 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	free_stack(t_stack *stack)
 		ft_printf("free stack %d\n", stack->nbr);
 		tmp = stack->next;
 		free(stack);
+		ft_printf("free stack %p\n", stack);
 		stack = tmp;
 	}
-	free(tmp);
 }

@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 19:22:13 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/09 09:28:45 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/16 08:25:46 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	main(int argc, char **argv)
 {
 	char	**nums;
 	t_stack	*a;
+	t_stack	*curr;
 
 	a = NULL;
 	nums = NULL;
@@ -29,6 +30,19 @@ int	main(int argc, char **argv)
 	}
 	if (argc > 2)
 		a = init_stack(a, argv + 1);
+	curr = a;
+	while (curr)
+	{
+		ft_printf("node: %d\n", curr->nbr);
+		curr = curr->next;
+	}
+	//sa(&a);
+	curr = a;
+	while (curr)
+	{
+		ft_printf("node: %d\n", curr->nbr);
+		curr = curr->next;
+	}
 	free_stack(a);
 	nums = NULL;
 	a = NULL;

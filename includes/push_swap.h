@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 19:23:21 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/09 09:35:31 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/16 08:26:01 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 
 typedef struct s_stack {
 	int				nbr;
-	size_t			len;
 	struct s_stack	*next;
 }					t_stack;
 
 t_stack	*init_stack(t_stack *node, char **nums);
 void	free_nums(char **nums);
 void	free_stack(t_stack *stack);
-int		invalid_input(char *num);
+int		validate_input(char *nums);
 void	ft_print_error(char *err_msg);
+long	ft_atol(const char *num);
 
 #endif
