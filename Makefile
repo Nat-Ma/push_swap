@@ -6,7 +6,7 @@
 #    By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/08 19:05:59 by natalierauh       #+#    #+#              #
-#    Updated: 2024/08/16 12:21:30 by natalierauh      ###   ########.fr        #
+#    Updated: 2024/08/16 14:30:11 by natalierauh      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ NAME = push_swap
 LIBFT = libft/libft.a
 
 SRC = main.c init_stack.c free_mem.c error.c validate_input.c ft_atol.c \
-	swap.c rotate.c \
+	swap.c rotate.c push.c\
 
 OBJ = $(SRC:.c=.o)
 
