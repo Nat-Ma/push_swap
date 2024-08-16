@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 12:19:58 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/09 12:31:54 by natalierauh      ###   ########.fr       */
+/*   Created: 2024/08/09 09:00:44 by natalierauh       #+#    #+#             */
+/*   Updated: 2024/08/16 08:55:41 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int    ft_isspace(const char c)
 long	ft_atol(const char *num)
 {
 	long	res;
-	int			sign;
+	int		sign;
 
 	res = 0;
 	sign = 1;
