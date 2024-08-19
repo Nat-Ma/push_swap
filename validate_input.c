@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 09:00:44 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/16 10:43:30 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/16 13:26:11 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,27 @@
 
 int	unique_nums(char **nums, int size)
 {
-	int		ascii[256] = {0};
-	int		index;
+	int	i;
+	int	j;
+	int	n1;
+	int	n2;
 
-	while (size--)
+	i = 0;
+	while (i < size)
 	{
-		index = *nums[size];
-		if (ascii[index])
+		j = 0;
+		n1 = ft_atoi((const char *)nums[i]);
+		while (j < size)
 		{
-			ft_print_error("No duplicates are allowed");
-			return (0);
+			n2 = ft_atoi((const char *)nums[j]);
+			if (i != j && n1 == n2)
+			{
+				ft_print_error("No duplicates are allowed");
+				return (0);
+			}
+			j++;
 		}
-		ascii[index] = 1;
+		i++;
 	}
 	return (1);
 }
@@ -48,14 +57,21 @@ int	in_int_range(char **nums, int size)
 
 int	only_digits(char **nums, int size)
 {
-	if (**nums == '-' || **nums == '+')
-		nums++;
+	int	i;
+
 	while(size--)
 	{
-		if (!ft_isdigit(*nums[size]))
+		i = 0;
+		if (nums[size][i] == '-' || nums[size][i] == '+')
+			i++;
+		while (nums[size][i])
 		{
-			ft_print_error("All Inputs must be digits.");
-			return (0);
+			if (!ft_isdigit(nums[size][i]))
+			{
+				ft_print_error("All Inputs must be digits.");
+				return (0);
+			}
+			i++;
 		}
 	}
 	return (1);
@@ -64,8 +80,8 @@ int	only_digits(char **nums, int size)
 int	valid_input(char **nums, int size)
 {
 	if (only_digits(nums, size)
-		&& unique_nums(nums, size)
-		&& in_int_range(nums, size))
+		&& in_int_range(nums, size)
+		&& unique_nums(nums, size))
 		return (1);
 	return (0);
 }
