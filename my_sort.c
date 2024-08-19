@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 13:13:02 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/19 19:03:21 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/20 00:59:33 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	sort(t_stack **a, t_stack **b)
 	int		bottom;
 	int		min;
 	int		max;
+	//int		max_a = 0;
 
 	size = stack_size(*a);
 	while(size > 3)
@@ -34,7 +35,9 @@ void	sort(t_stack **a, t_stack **b)
 		else if ((*a)->nbr > max)
 		{
 			while ((*b)->nbr != max)
+			{
 				rrb(b);
+			}
 			max = (*a)->nbr;
 			bottom = min;
 			pb(a, b);
@@ -42,14 +45,16 @@ void	sort(t_stack **a, t_stack **b)
 		else if ((*a)->nbr < min)
 		{
 			while ((*b)->nbr != max)
-				rrb(b);
+			{
+				rb(b);
+			}
 			bottom = min;
 			min = (*a)->nbr;
 			pb(a, b);
 		}
 		else
 		{
-			while ((*a)->nbr < (*b)->nbr && (*a)->nbr > bottom)
+			while ((*a)->nbr < (*b)->nbr || (*a)->nbr > bottom)
 			{
 				bottom = (*b)->nbr;
 				rb(b);
@@ -58,4 +63,22 @@ void	sort(t_stack **a, t_stack **b)
 		}
 		size--;
 	}
+	//tiny_sort(a);
+	//ft_printf("---------- STACKS A and B ----------");
+	//print_stack((*a));
+	while ((*b)->nbr != max)
+		rrb(b);
+	//print_stack((*b));
+	size = stack_size(*b);
+	max = (*a)->nbr;
+	while (size)
+	{
+		while ((*b)->nbr > (*a)->nbr)
+			ra(a);
+		pa(a, b);
+		size--;
+	}
+	while ((*a)->nbr != max)
+		rra(a);
+	ra(a);
 }
