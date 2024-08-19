@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 19:22:13 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/16 18:40:31 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/19 19:02:32 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ int	main(int argc, char **argv)
 	size = stack_size(a);
 	if (size <= 3)
 		tiny_sort(&a);
+	else
+		sort(&a, &b);
 	print_stack(a);
 	free_stack(a);
 	free_stack(b);

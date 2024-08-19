@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 19:23:21 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/16 18:33:15 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/19 19:03:07 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,7 @@ void	pa(t_stack **head_a, t_stack **head_b);
 void	pb(t_stack **head_a, t_stack **head_b);
 void	tiny_sort(t_stack **head_a);
 void	print_stack(t_stack *head);
+size_t	stack_size(t_stack *head);
+void	sort(t_stack **a, t_stack **b);
 
 #endif
