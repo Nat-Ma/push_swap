@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/16 18:15:29 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/16 18:39:39 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/20 00:55:31 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	tiny_sort(t_stack **head_a)
 	int	pos;
 
 	pos = find_max(head_a);
-	ft_printf("max %d\n", pos);
+	//ft_printf("max %d\n", pos);
 	if (pos == 1)
 		ra(head_a);
 	else if (pos == 2)

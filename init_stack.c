@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 20:03:43 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/16 12:50:17 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/20 00:58:37 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ t_stack	*new_node(t_stack *head, int data)
 		free_stack(head);
 		return (NULL);
 	}
-	ft_printf("alloced new node %p with data %d\n", new, data);
+	//ft_printf("alloced new node %p with data %d\n", new, data);
 	new->nbr = data;
 	new->next = NULL;
-	ft_printf("created head with num %d head %p\n", new->nbr, head);
+	//ft_printf("created head with num %d head %p\n", new->nbr, head);
 	return (new);
 }
 
@@ -41,10 +41,10 @@ t_stack	*init_stack(t_stack *head, char **nums)
 		size++;
 	if (!valid_input(nums, size))
 		return (0);
-	ft_printf("---------- INPUT VALID ----------\n");
+	//ft_printf("---------- INPUT VALID ----------\n");
 	while (size--)
 	{
-		ft_printf("Size: %d, Num %s\n", size, nums[size]);
+		//ft_printf("Size: %d, Num %s\n", size, nums[size]);
 		new = new_node(head, ft_atoi(nums[size]));
 		if (!new)
 		{

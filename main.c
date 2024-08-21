@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 19:22:13 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/19 19:02:32 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/20 00:59:07 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,8 @@ int	main(int argc, char **argv)
 		tiny_sort(&a);
 	else
 		sort(&a, &b);
-	print_stack(a);
+	//ft_printf("---- SORTED ----");
+	//print_stack(a);
 	free_stack(a);
 	free_stack(b);
 	nums = NULL;
