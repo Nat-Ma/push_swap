@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 13:13:02 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/20 00:59:33 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/20 01:21:46 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	sort(t_stack **a, t_stack **b)
 	int		bottom;
 	int		min;
 	int		max;
-	//int		max_a = 0;
 
 	size = stack_size(*a);
 	while(size > 3)
