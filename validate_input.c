@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validate_input.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
+/*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 09:00:44 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/16 13:26:11 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/23 14:10:31 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	unique_nums(char **nums, int size)
 			n2 = ft_atoi((const char *)nums[j]);
 			if (i != j && n1 == n2)
 			{
-				ft_print_error("No duplicates are allowed");
+				ft_print_error();
 				return (0);
 			}
 			j++;
@@ -48,7 +48,7 @@ int	in_int_range(char **nums, int size)
 		n = ft_atol((const char *)nums[size]);
 		if (n < INT_MIN || n > INT_MAX)
 		{
-			ft_print_error("Number not in int range...");
+			ft_print_error();
 			return (0);
 		}
 	}
@@ -59,7 +59,7 @@ int	only_digits(char **nums, int size)
 {
 	int	i;
 
-	while(size--)
+	while (size--)
 	{
 		i = 0;
 		if (nums[size][i] == '-' || nums[size][i] == '+')
@@ -68,7 +68,7 @@ int	only_digits(char **nums, int size)
 		{
 			if (!ft_isdigit(nums[size][i]))
 			{
-				ft_print_error("All Inputs must be digits.");
+				ft_print_error();
 				return (0);
 			}
 			i++;

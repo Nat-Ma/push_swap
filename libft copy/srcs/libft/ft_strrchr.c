@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 09:08:29 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/23 14:10:06 by nrauh            ###   ########.fr       */
+/*   Created: 2024/04/23 16:02:32 by nrauh             #+#    #+#             */
+/*   Updated: 2024/06/27 13:53:47 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "../../includes/libft.h"
 
-void	ft_print_error(void)
+char	*ft_strrchr(const char *s, int c)
 {
-	ft_printf("Error\n");
-	//ft_printf("%s\n", err_msg);
+	size_t		len;
+	char		*p;
+
+	len = ft_strlen(s);
+	p = (char *) s + len;
+	while (*p != (char)c && len > 0)
+	{
+		p--;
+		len--;
+	}
+	if (*p == (char)c)
+		return (p);
+	return (NULL);
 }

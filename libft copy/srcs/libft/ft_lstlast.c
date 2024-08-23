@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 09:08:29 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/23 14:10:06 by nrauh            ###   ########.fr       */
+/*   Created: 2024/05/03 18:41:37 by nrauh             #+#    #+#             */
+/*   Updated: 2024/06/27 13:53:47 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "../../includes/libft.h"
 
-void	ft_print_error(void)
+t_list	*ft_lstlast(t_list *lst)
 {
-	ft_printf("Error\n");
-	//ft_printf("%s\n", err_msg);
+	t_list	*current;
+
+	if (!lst)
+		return (NULL);
+	current = lst;
+	while (current->next)
+		current = current->next;
+	return (current);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
+/*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 20:03:43 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/20 00:58:37 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/23 16:55:15 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,13 @@ t_stack	*new_node(t_stack *head, int data)
 	new = malloc(sizeof(t_stack));
 	if (!new)
 	{
-		ft_print_error("Failed to malloc node!");
+		ft_print_error();
 		free_stack(head);
 		return (NULL);
 	}
 	//ft_printf("alloced new node %p with data %d\n", new, data);
 	new->nbr = data;
+	new->pos = -1;
 	new->next = NULL;
 	//ft_printf("created head with num %d head %p\n", new->nbr, head);
 	return (new);
@@ -37,10 +38,15 @@ t_stack	*init_stack(t_stack *head, char **nums)
 
 	size = 0;
 	head = NULL;
+	if (!nums)
+		return (NULL);
 	while (nums[size])
 		size++;
 	if (!valid_input(nums, size))
+	{
+		free_nums(nums);
 		return (0);
+	}
 	//ft_printf("---------- INPUT VALID ----------\n");
 	while (size--)
 	{

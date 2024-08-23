@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 09:08:29 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/23 14:10:06 by nrauh            ###   ########.fr       */
+/*   Created: 2024/05/17 14:36:28 by nrauh             #+#    #+#             */
+/*   Updated: 2024/06/27 13:55:30 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "../../includes/ft_printf.h"
 
-void	ft_print_error(void)
+int	ft_putstr(char *s)
 {
-	ft_printf("Error\n");
-	//ft_printf("%s\n", err_msg);
+	int		len;
+
+	len = ft_strlen(s);
+	return (write(1, s, len));
 }

@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 09:08:29 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/23 14:10:06 by nrauh            ###   ########.fr       */
+/*   Created: 2024/04/22 13:43:02 by nrauh             #+#    #+#             */
+/*   Updated: 2024/04/26 14:45:32 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
-
-void	ft_print_error(void)
+int	ft_isascii(int c)
 {
-	ft_printf("Error\n");
-	//ft_printf("%s\n", err_msg);
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }

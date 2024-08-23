@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 09:08:29 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/23 14:10:06 by nrauh            ###   ########.fr       */
+/*   Created: 2024/05/02 10:37:36 by nrauh             #+#    #+#             */
+/*   Updated: 2024/05/02 10:37:39 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include <unistd.h>
 
-void	ft_print_error(void)
+void	ft_putchar_fd(char c, int fd)
 {
-	ft_printf("Error\n");
-	//ft_printf("%s\n", err_msg);
+	write(fd, &c, 1);
 }

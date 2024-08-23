@@ -3,41 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
+/*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 19:22:13 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/20 00:59:07 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/23 16:26:47 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-void	print_stack(t_stack *head)
+void	free_all(t_stack *a, t_stack *b)
 {
-	t_stack *curr;
-
-	curr = head;
-	ft_printf("\nPrinting stack\n");
-	while (curr)
-	{
-		ft_printf("node: %d next: %d\n", curr->nbr, curr->next);
-		curr = curr->next;
-	}
-}
-
-size_t	stack_size(t_stack *head)
-{
-	size_t	size;
-	t_stack	*curr;
-
-	size = 0;
-	curr = head;
-	while (curr)
-	{
-		size++;
-		curr = curr->next;
-	}
-	return (size);
+	free_stack(a);
+	free_stack(b);
 }
 
 int	main(int argc, char **argv)
@@ -50,29 +28,35 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	nums = NULL;
+	if (argc == 1)
+		return (1);
 	if (argc == 2)
 	{
 		nums = ft_split(argv[1], ' ');
-		if (!nums)
-			return (1);
 		a = init_stack(a, nums);
-		free_nums(nums);
 		if (!a)
 			exit (0);
+		free_nums(nums);
 	}
 	if (argc > 2)
 		a = init_stack(a, argv + 1);
 	size = stack_size(a);
-	if (size <= 3)
-		tiny_sort(&a);
-	else
-		sort(&a, &b);
+	if (size == 0)
+		;
+	else if (already_sorted(&a))
+		;
+	else if (size == 1)
+		ft_print_error();
+	else if (size <= 3)
+		sort_three(&a);
+	else if (size == 4)
+		sort_four(&a, &b);
+	else if (size <= 5)
+		sort_five(&a, &b);
+	else if (size)
+		radix_sort(&a, &b);
 	//ft_printf("---- SORTED ----");
 	//print_stack(a);
-	free_stack(a);
-	free_stack(b);
-	nums = NULL;
-	a = NULL;
-	b = NULL;
+	free_all(a, b);
 	return (0);
 }

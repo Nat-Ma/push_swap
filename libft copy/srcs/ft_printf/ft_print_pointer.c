@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_print_pointer.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 09:08:29 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/23 14:10:06 by nrauh            ###   ########.fr       */
+/*   Created: 2024/05/10 12:01:20 by nrauh             #+#    #+#             */
+/*   Updated: 2024/06/27 13:55:30 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "../../includes/ft_printf.h"
 
-void	ft_print_error(void)
+int	ft_print_pointer(void *ptr)
 {
-	ft_printf("Error\n");
-	//ft_printf("%s\n", err_msg);
+	unsigned long	n;
+	int				len;
+
+	n = (unsigned long) ptr;
+	if (ptr == 0)
+		return (ft_putstr("(nil)"));
+	if (write(1, "0x", 2) == -1)
+		return (-1);
+	len = ft_print_hex(n, 1, 'x');
+	if (len == -1)
+		return (-1);
+	return (len + 2);
 }

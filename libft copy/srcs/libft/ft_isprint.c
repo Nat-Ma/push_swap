@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 09:08:29 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/23 14:10:06 by nrauh            ###   ########.fr       */
+/*   Created: 2024/04/22 13:45:16 by nrauh             #+#    #+#             */
+/*   Updated: 2024/04/26 15:37:51 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
-
-void	ft_print_error(void)
+int	ft_isprint(int c)
 {
-	ft_printf("Error\n");
-	//ft_printf("%s\n", err_msg);
+	if (c >= 32 && c <= 126)
+		return (c);
+	return (0);
 }

@@ -1,44 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 09:00:44 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/21 14:46:29 by nrauh            ###   ########.fr       */
+/*   Created: 2024/04/25 17:23:54 by nrauh             #+#    #+#             */
+/*   Updated: 2024/06/27 13:53:47 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "../../includes/libft.h"
+#include <limits.h>
 
-static int    ft_isspace(const char c)
+static int	ft_isspace(const char c)
 {
-    if ((c >= 9 && c <= 13) || c == ' ')
-        return (1);
-    return (0);
+	if ((c >= 9 && c <= 13) || c == ' ')
+		return (1);
+	return (0);
 }
 
-long	ft_atol(const char *num)
+int	ft_atoi(const char *nptr)
 {
-	long	res;
+	int		res;
 	int		sign;
 
 	res = 0;
 	sign = 1;
-	while (ft_isspace(*num))
-		num++;
-	if (*num == '+')
-		num++;
-	if (*num == '-')
+	while (ft_isspace(*nptr))
+		nptr++;
+	if (*nptr == '+' || *nptr == '-')
 	{
-		sign = -1;
-		num++;
+		if (*nptr == '-')
+			sign = -1;
+		nptr++;
 	}
-	while (*num && ft_isdigit(*num))
+	while (*nptr && ft_isdigit(*nptr))
 	{
-		res = res * 10 + *num - '0';
-		num++;
+		res = res * 10 + *nptr - '0';
+		nptr++;
 	}
 	return (sign * res);
 }

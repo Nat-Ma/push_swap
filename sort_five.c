@@ -1,44 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   sort_five.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 09:00:44 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/21 14:46:29 by nrauh            ###   ########.fr       */
+/*   Created: 2024/08/22 14:53:51 by nrauh             #+#    #+#             */
+/*   Updated: 2024/08/22 17:32:04 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
 
-static int    ft_isspace(const char c)
+void	sort_five(t_stack **a, t_stack **b)
 {
-    if ((c >= 9 && c <= 13) || c == ' ')
-        return (1);
-    return (0);
-}
+	int	min;
+	int	max;
+	int	size;
 
-long	ft_atol(const char *num)
-{
-	long	res;
-	int		sign;
-
-	res = 0;
-	sign = 1;
-	while (ft_isspace(*num))
-		num++;
-	if (*num == '+')
-		num++;
-	if (*num == '-')
+	max = find_max(*a);
+	min = find_min(*a);
+	size = 5;
+	while (size--)
 	{
-		sign = -1;
-		num++;
+		if ((*a)->nbr == min || (*a)->nbr == max)
+			pb(a, b);
+		else
+			ra(a);
 	}
-	while (*num && ft_isdigit(*num))
+	sort_three(a);
+	while ((*b))
 	{
-		res = res * 10 + *num - '0';
-		num++;
+		pa(a, b);
+		if ((*a)->nbr == max)
+			ra(a);
 	}
-	return (sign * res);
+	print_stack(*a);
 }

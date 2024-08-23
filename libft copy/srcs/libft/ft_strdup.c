@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 09:08:29 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/23 14:10:06 by nrauh            ###   ########.fr       */
+/*   Created: 2024/04/26 12:21:27 by nrauh             #+#    #+#             */
+/*   Updated: 2024/06/27 13:53:47 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "../../includes/libft.h"
 
-void	ft_print_error(void)
+char	*ft_strdup(const char *s)
 {
-	ft_printf("Error\n");
-	//ft_printf("%s\n", err_msg);
+	size_t	len;
+	char	*dup;
+
+	len = ft_strlen(s);
+	dup = malloc((len + 1) * sizeof(char));
+	if (dup == NULL)
+		return (NULL);
+	while (*s)
+		*dup++ = *s++;
+	*dup = '\0';
+	return (dup - len);
 }

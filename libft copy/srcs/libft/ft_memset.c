@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/09 09:08:29 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/23 14:10:06 by nrauh            ###   ########.fr       */
+/*   Created: 2024/04/22 14:24:42 by nrauh             #+#    #+#             */
+/*   Updated: 2024/06/27 13:53:47 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/push_swap.h"
+#include "../../includes/libft.h"
 
-void	ft_print_error(void)
+void	*ft_memset(void *ptr, int value, size_t n)
 {
-	ft_printf("Error\n");
-	//ft_printf("%s\n", err_msg);
+	size_t			i;
+	unsigned char	*p;
+
+	p = (unsigned char *)ptr;
+	i = 0;
+	while (i < n)
+	{
+		p[i] = (unsigned char)value;
+		i++;
+	}
+	return (ptr);
 }

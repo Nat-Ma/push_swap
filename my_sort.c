@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   my_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
+/*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 13:13:02 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/20 01:21:46 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/22 15:18:04 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	sort(t_stack **a, t_stack **b)
 	int		max;
 
 	size = stack_size(*a);
-	while(size > 3)
+	while (size > 3)
 	{
-		if ((*a)->nbr > (*a)->next->nbr)
-			sa(a);
+		//if ((*a)->nbr > (*a)->next->nbr)
+		//	sa(a);
 		if (!(*b))
 		{
 			bottom = (*a)->nbr;
@@ -62,7 +62,7 @@ void	sort(t_stack **a, t_stack **b)
 		}
 		size--;
 	}
-	//tiny_sort(a);
+	//sort_three(a);
 	//ft_printf("---------- STACKS A and B ----------");
 	//print_stack((*a));
 	while ((*b)->nbr != max)
