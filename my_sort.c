@@ -3,14 +3,69 @@
 /*                                                        :::      ::::::::   */
 /*   my_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
+/*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 13:13:02 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/22 15:18:04 by nrauh            ###   ########.fr       */
+/*   Updated: 2024/08/29 10:11:34 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
+
+int	closer_to_top(t_stack *head, int n)
+{
+	int		top;
+	t_stack	*curr;
+
+	top = 0;
+	curr = head;
+	while(curr->nbr != n)
+	{
+		top++;
+		curr = curr->next;
+	}
+	return (top <= (int)stack_size(head) / 2);
+}
+
+void	rotate_b_to_max(t_stack **b, int max)
+{
+	while ((*b)->nbr != max)
+	{
+		if (closer_to_top(*b, max))
+			rb(b);
+		else
+			rrb(b);
+	}
+}
+
+void	rotate_b_to_range(t_stack **b, int n, int *bottom)
+{
+	while (n < (*b)->nbr || n > *bottom)
+	{
+		*bottom = (*b)->nbr;
+		rb(b);
+	}
+}
+
+void	rotate_a_to_range(t_stack **a, int n, int *bottom)
+{
+	while (n > (*a)->nbr || n < *bottom)
+	{
+		*bottom = (*a)->nbr;
+		ra(a);
+	}
+}
+
+void	rotate_a_to_min(t_stack **a, int min)
+{
+	while ((*a)->nbr != min)
+	{
+		if (closer_to_top(*a, min))
+			ra(a);
+		else
+			rra(a);
+	}
+}
 
 void	sort(t_stack **a, t_stack **b)
 {
@@ -22,8 +77,6 @@ void	sort(t_stack **a, t_stack **b)
 	size = stack_size(*a);
 	while (size > 3)
 	{
-		//if ((*a)->nbr > (*a)->next->nbr)
-		//	sa(a);
 		if (!(*b))
 		{
 			bottom = (*a)->nbr;
@@ -33,51 +86,54 @@ void	sort(t_stack **a, t_stack **b)
 		}
 		else if ((*a)->nbr > max)
 		{
-			while ((*b)->nbr != max)
-			{
-				rrb(b);
-			}
+			rotate_b_to_max(b, max);
 			max = (*a)->nbr;
 			bottom = min;
 			pb(a, b);
 		}
 		else if ((*a)->nbr < min)
 		{
-			while ((*b)->nbr != max)
-			{
-				rb(b);
-			}
+			rotate_b_to_max(b, max);
 			bottom = min;
 			min = (*a)->nbr;
 			pb(a, b);
 		}
 		else
 		{
-			while ((*a)->nbr < (*b)->nbr || (*a)->nbr > bottom)
-			{
-				bottom = (*b)->nbr;
-				rb(b);
-			}
+			rotate_b_to_range(b, (*a)->nbr, &bottom);
 			pb(a, b);
 		}
 		size--;
 	}
-	//sort_three(a);
-	//ft_printf("---------- STACKS A and B ----------");
-	//print_stack((*a));
-	while ((*b)->nbr != max)
-		rrb(b);
-	//print_stack((*b));
+	sort_three(a);
+	rotate_b_to_max(b, max);
 	size = stack_size(*b);
-	max = (*a)->nbr;
+	min = (*a)->nbr;
+	max = find_max(*a);
+	bottom = max;
 	while (size)
 	{
-		while ((*b)->nbr > (*a)->nbr)
-			ra(a);
-		pa(a, b);
+		if ((*b) && (*b)->nbr > max)
+		{
+			rotate_a_to_min(a, min);
+			bottom = min;
+			max = (*b)->nbr;
+			pa(a, b);
+		}
+		else if ((*b) && (*b)->nbr < min)
+		{
+			rotate_a_to_min(a, min);
+			min = (*b)->nbr;
+			pa(a, b);
+		}
+		else if ((*b))
+		{
+			rotate_a_to_range(a, (*b)->nbr, &bottom);
+			pa(a, b);
+		}
 		size--;
 	}
-	while ((*a)->nbr != max)
-		rra(a);
-	ra(a);
+	rotate_a_to_min(a, min);
+	// ft_printf("---------- FINISSSHHH ----------");
+	// print_stack((*a));
 }

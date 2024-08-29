@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
+/*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 19:22:13 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/23 16:26:47 by nrauh            ###   ########.fr       */
+/*   Updated: 2024/08/29 08:23:45 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	main(int argc, char **argv)
 	else if (size <= 5)
 		sort_five(&a, &b);
 	else if (size)
-		radix_sort(&a, &b);
+		sort(&a, &b);
 	//ft_printf("---- SORTED ----");
 	//print_stack(a);
 	free_all(a, b);
