@@ -6,7 +6,7 @@
 /*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 18:52:49 by nrauh             #+#    #+#             */
-/*   Updated: 2024/06/27 13:53:47 by nrauh            ###   ########.fr       */
+/*   Updated: 2024/08/23 11:21:00 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ char	**ft_split(char const *s, char c)
 	char	**split;
 
 	words = ft_countwords(s, c);
+	if (words == 0)
+		return (NULL);
 	split = ft_calloc(words + 1, sizeof(char *));
 	if (!split)
 		return (NULL);

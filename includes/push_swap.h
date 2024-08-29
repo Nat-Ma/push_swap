@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
+/*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 19:23:21 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/28 22:52:18 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/23 14:53:17 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,15 @@ void	rrb(t_stack **head);
 void	rrr(t_stack **head_a, t_stack **head_b);
 void	pa(t_stack **head_a, t_stack **head_b);
 void	pb(t_stack **head_a, t_stack **head_b);
+void	sort_three(t_stack **head_a);
+void	sort_four(t_stack **a, t_stack **b);
+void	sort_five(t_stack **a, t_stack **b);
 void	print_stack(t_stack *head);
 size_t	stack_size(t_stack *head);
+int		find_min(t_stack *head);
+int		find_max(t_stack *head);
 void	sort(t_stack **a, t_stack **b);
 void	radix_sort(t_stack **a, t_stack **b);
 int		already_sorted(t_stack **head_a);
-void	sort_three(t_stack **head_a);
-void	sort_four(t_stack **head_a, t_stack **b);
-void	sort_five(t_stack **head_a, t_stack **b);
-int		find_min(t_stack *head);
-int		find_max(t_stack *head);
 
 #endif
